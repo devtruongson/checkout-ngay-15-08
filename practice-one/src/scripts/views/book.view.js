@@ -13,6 +13,18 @@ class BookView {
         this.confirmationBox = getElementById("confirmation-box");
         this.sortOrder = "ascending";
 
+        const InputImageUpload = document.querySelector("#input-select-file");
+        const ElementPreview = document.querySelector("#preview-image");
+        InputImageUpload.addEventListener("change", (e) => {
+            if (e.target.files[0]) {
+                console.log(ElementPreview);
+                console.log(URL.createObjectURL(e.target.files[0]));
+                ElementPreview.innerHTML = `  <img style="width: 100px; height: 100px; object-fit:cover; border-radius: 10px" src="${URL.createObjectURL(
+                    e.target.files[0]
+                )}" alt="" /> `;
+            }
+        });
+
         querySelector(".create").addEventListener(
             "click",
             this.showValidationForm

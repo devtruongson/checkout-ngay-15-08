@@ -57,6 +57,7 @@ class BookDetailPage {
             getElementById("author").value = bookInfo.author;
             getElementById("date").value = bookInfo.date;
             getElementById("description").value = bookInfo.description;
+            getElementById("preview-link-image").innerText = bookInfo.image;
             validationForm.style.display = "block";
             overlay.style.display = "block";
         });
